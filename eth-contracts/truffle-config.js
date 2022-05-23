@@ -23,6 +23,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+var mnemonic = "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat";
 
 module.exports = {
   /**
@@ -46,6 +47,18 @@ module.exports = {
       host: "127.0.0.1", // Localhost (default: none)
       port: 8545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
+    },
+
+    ganache_cli: {
+      // provider: () => new HDWalletProvider(mnemonic, `https://127.0.0.1:8545/`),
+      host: "localhost",
+      port: 8545,
+      network_id: '*',
+      gas: 9999999,
+      networkCheckTimeout: 999999,
+      websockets: true, // Enable EventEmitter interface for web3 (default: false)
+      networkCheckTimeoutnetworkCheckTimeout: 10000,
+      timeoutBlocks: 200
     },
 
     // Another network with more advanced options...
@@ -79,7 +92,7 @@ module.exports = {
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // timeout: 100000
+    timeout: 100000
   },
 
   // Configure your compilers
@@ -87,13 +100,14 @@ module.exports = {
     solc: {
       // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
-      //  evmVersion: "byzantium"
-      // }
+      settings: { // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+          enabled: false,
+          runs: 200
+        },
+        //  evmVersion: "byzantium"
+        // }
+      }
     }
   }
 }
