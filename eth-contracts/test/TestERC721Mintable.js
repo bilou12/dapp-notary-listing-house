@@ -6,8 +6,6 @@ contract('TestERC721Mintable', accounts => {
     const account_one = accounts[1];
     const account_two = accounts[2];
 
-    console.log('accounts: ' + accounts);
-
     const COUNT_NFT = 3;
 
     describe('match erc721 spec', function () {

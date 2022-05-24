@@ -1,2 +1,4 @@
 node_modules/
 eth-contracts/build/
+perso.md
+zokrates/.zokrates/
