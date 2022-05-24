@@ -6,23 +6,43 @@ Once the token has been verified we will place it on a blockchain market place (
 
 # Run the projects
 
-## Zokrates
+## ZoKrates
+
+- zkSNARKS framework for ethereum
+- zkSNARKS provides a layer of privacy for blockchains
+- useful resouces:
+  - https://github.com/jstoxrocky/zksnarks_example
 
 ```bash
 docker run -v <path to your project folder>:/home/zokrates/code -ti zokrates/zokrates /bin/bash
 ```
 
+- Commands run by the "trusted 3rd-party" to enable zk-SNARKS:
+
 ```bash
+# Takes the file written in ZoKrates higher level language and compiles it into an arithmetic circuit
 zokrates compile -i /home/zokrates/code/square/square.code
 
+# Generates the proving_key and verification_key (both are publicly available) from the arithmetic circuit and the "toxic-waste" (because if users know it, they can generate fake proofs) parameter lambda
 zokrates setup
 
-zokrates compute-witness -a 3 9
-
-zokrates generate-proof
-
+# Creates a verifier.sol that contains the hardcoded verification_key and the public function verifyTx i.e the znark verifier
 zokrates export-verifier
 ```
+
+- Commands run by the "prover" to prove something to the ethereum community without revealing all the values contributing t othe proof
+
+```bash
+# Creates a witness for use in generating the proof. A proof is dependant on specific values of public and private arguments
+zokrates compute-witness -a 3 9
+
+# Creates a proof tat is dependant on a witness and a proving_key
+zokrates generate-proof
+```
+
+- Actions taken by an observer
+
+The observer just has to check the output of the transaction the verifier sent to the verifyTx function. if it returns 'true' then the observer knows that the prover is right
 
 ```bash
 docker cp a3c5bfc6b6c0:/home/zokrates/ C:\Users\azais\workspace\udacity\dapp-house-listing-service\

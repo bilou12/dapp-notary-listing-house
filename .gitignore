@@ -2,3 +2,5 @@ node_modules/
 eth-contracts/build/
 perso.md
 zokrates/.zokrates/
+zokrates/code/square/witness2
+zokrates/code/square/proof2.json

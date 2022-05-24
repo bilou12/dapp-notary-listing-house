@@ -17,31 +17,22 @@ contract('TestSquareVerifier', accounts => {
         })
 
         it('should work with correct proof', async () => {
-            let temp = [
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c
-            ];
             let inputs = proof.inputs;
+            // let inputs = [4, 16];
+            console.log('inputs: ' + inputs)
 
-            let res = await this.contract.verifyTx(temp, inputs);
+            let res = await this.contract.verifyTx(proof.proof.a, proof.proof.b, proof.proof.c, inputs);
 
             assert.equal(res, true, "res should be true");
         })
 
+        // Test verification with incorrect proof
         it('should fail with incorrect proof', async () => {
-            let temp = [
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c
-            ];
             let inputs = [10, 2];
 
-            let res = await this.contract.verifyTx(temp, inputs);
+            let res = await this.contract.verifyTx(proof.proof.a, proof.proof.b, proof.proof.c, inputs);
 
             assert.equal(res, false, "res should be false");
         })
     })
 })
-
-// Test verification with incorrect proof
