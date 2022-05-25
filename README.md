@@ -1,10 +1,63 @@
 # Dapp notary listing house
 
-In this project, we will be minting our own tokens to represent titles of properties. Before minting a token, we will verify the owner owns the property. We will use zk-SNARKs to create a verification system which can prove you have title to the property without revealing that specific information on the property. The basics on zk-SNARKs has been covered in Privacy lesson in Course 5 of the Udacity Blockchain Engineer Nanodegree Program.
+In this project, we will be minting our own tokens to represent titles of properties. Before minting a token, we will verify the owner owns the property. We will use zk-SNARKs to create a verification system which can prove you have title to the property without revealing that specific information on the property.
+
+PS: For educational purposes, we will actually prove that the user owns the property if he knows 2 numbers with the 1st one being the square root of the 2nd number. :-)
 
 Once the token has been verified we will place it on a blockchain market place (OpenSea) for others to purchase. Let's get started!
 
 # Run the projects
+
+## Local
+
+```bash
+# create a local ethereum blockchain with 35 nodes with RPC Listening on 127.0.0.1:8545
+ganache-cli -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" -a 35
+
+# connect to the local blockchain
+cd .\eth-contracts\
+truffle console --network ganache_cli
+```
+
+Once connected:
+
+```bash
+# compile
+compile
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+# test
+test
+>
+  Contract: TestERC721Mintable
+    match erc721 spec
+      √ should return total supply
+      √ should get token balance
+      √ should return token uri
+      √ should transfer token from one owner to another (55ms)
+    have ownership properties
+      √ should fail when minting when address is not contract owner (52ms)
+      √ should return contract owner
+
+  Contract: SolnSquareVerifier
+SolutionAdded:
+    √ can add a new solution (caught by the event SolutionAdded) (626ms)
+    √ can mint a new ERC721 token (588ms)
+
+  Contract: ZokratesSquareVerifier
+    √ should work with correct proof (518ms)
+    √ should fail with incorrect proof (519ms)
+
+
+  10 passing (5s)
+```
+
+To clean the contracts code:
+
+```bash
+npx prettier --write 'contracts/**/*.sol'
+```
 
 ## ZoKrates
 

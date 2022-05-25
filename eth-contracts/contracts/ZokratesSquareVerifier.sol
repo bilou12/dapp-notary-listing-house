@@ -333,11 +333,12 @@ contract Verifier {
         return 0;
     }
 
-    function verifyTx(uint256[2] memory a, uint256[2][2] memory b, uint256[2] memory c, uint256[2] memory input)
-        public
-        view
-        returns (bool r)
-    {
+    function verifyTx(
+        uint256[2] memory a,
+        uint256[2][2] memory b,
+        uint256[2] memory c,
+        uint256[2] memory input
+    ) public view returns (bool r) {
         Proof memory proof;
         proof.a = Pairing.G1Point(a[0], a[1]);
         proof.b = Pairing.G2Point([b[0][0], b[0][1]], [b[1][0], b[1][1]]);

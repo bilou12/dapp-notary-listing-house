@@ -16,14 +16,12 @@ contract('TestERC721Mintable', accounts => {
 
             // mint 3 NFTs for account_one
             for (let i = 0; i < COUNT_NFT; i++) {
-                console.log("create NFT for account_one: " + i);
                 await this.contract.mint(account_one, i, {
                     from: account_owner
                 });
             }
 
             // mint 1 NFT for account_two
-            console.log("create NFT for account_two: " + 4);
             await this.contract.mint(account_two, 4, {
                 from: account_owner
             });
@@ -52,7 +50,6 @@ contract('TestERC721Mintable', accounts => {
         it('should transfer token from one owner to another', async function () {
             let tokenId = 1;
             let tokenOwner = await this.contract.ownerOf(tokenId);
-            console.log("owner: " + tokenOwner);
             await this.contract.transferFrom(tokenOwner, account_two, tokenId, {
                 from: tokenOwner
             });
