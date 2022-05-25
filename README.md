@@ -13,7 +13,7 @@ Once the token has been verified we will place it on a blockchain market place (
 ```bash
 node v10.24.0
 solidity: 0.5.2
-ganache v7.0.2 (@ganache/cli: 0.1.3, @ganache/core: 0.1.3)
+ganache: v7.0.2 (@ganache/cli: 0.1.3, @ganache/core: 0.1.3)
 web3: 1.0.0-beta.37
 ```
 
@@ -164,10 +164,12 @@ Summary
 ```
 
 - Contract deployed on Rinkeby test network with the address:
-  v1 (deprecated): 0x1ff1A6bF50F3440383a61774d25b5C92e567192F (https://rinkeby.etherscan.io/address/0x1ff1a6bf50f3440383a61774d25b5c92e567192f)
-  v2: 0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B (https://rinkeby.etherscan.io/address/0x6e8cc50acbb75abf892b4c2eac4f8659da94ca8b)
 
-- 10 non-fungible tokens (0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B) were minted. From tx 0x6fce05512b4a058cafab4d2ed1056a9a72950c2c6d759bbb1cea386968c1c01f to tx 0x79b4183d82c6dac469bb6dd6d29f788b57df8c1edae69693e288695d68f3e3d9
+  - v1 (deprecated): 0x1ff1A6bF50F3440383a61774d25b5C92e567192F (https://rinkeby.etherscan.io/address/0x1ff1a6bf50f3440383a61774d25b5c92e567192f)
+  - v2: 0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B (https://rinkeby.etherscan.io/address/0x6e8cc50acbb75abf892b4c2eac4f8659da94ca8b)
+
+- 10 non-fungible tokens (0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B) were minted.
+  - From tx 0x6fce05512b4a058cafab4d2ed1056a9a72950c2c6d759bbb1cea386968c1c01f to tx 0x79b4183d82c6dac469bb6dd6d29f788b57df8c1edae69693e288695d68f3e3d9
 
 ```bash
 cd src
@@ -180,7 +182,7 @@ node .\mintToken.js
 
 - zkSNARKS framework for ethereum
 - zkSNARKS provides a layer of privacy for blockchains
-- useful resouces:
+- Useful resouces:
   - https://github.com/jstoxrocky/zksnarks_example
 
 ```bash
@@ -214,10 +216,6 @@ zokrates generate-proof
 - Actions taken by an observer
 
 The observer just has to check the output of the transaction the verifier sent to the verifyTx function. if it returns 'true' then the observer knows that the prover is right
-
-```bash
-docker cp a3c5bfc6b6c0:/home/zokrates/ C:\Users\azais\workspace\udacity\dapp-house-listing-service\
-```
 
 # Project Resources
 
