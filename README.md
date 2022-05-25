@@ -6,7 +6,7 @@ PS: For educational purposes, we will actually prove that the user owns the prop
 
 Once the token has been verified we will place it on a blockchain market place (OpenSea) for others to purchase. Let's get started!
 
-# Run the projects
+# Run and deploy the projects
 
 ## Local
 
@@ -57,6 +57,99 @@ To clean the contracts code:
 
 ```bash
 npx prettier --write 'contracts/**/*.sol'
+```
+
+## Rinkeby
+
+```bash
+truffle console --network rinkeby
+compile
+migrate
+```
+
+```bash
+> Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xa8a7602f8d3eb310b7b67ab0a301602d39fb81f8812a3537894d047e08813cd8
+undefined
+undefined
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > transaction hash:    0xa2c74127db5350d693d52ebe5b65dab715725e6fd10698a95922864063408202
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x1ff1A6bF50F3440383a61774d25b5C92e567192F
+   > block number:        10736325
+   > block timestamp:     1653461635
+   > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
+   > balance:             0.299832508295488155
+   > gas used:            3488291 (0x353a23)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03488291 ETH
+
+undefined
+   > Blocks: 1            Seconds: 13
+   > contract address:    0xDAc4b83BF34D08B628D4aE6AB96e4Ee3F5AfB1EB
+   > block number:        10736328
+   > block timestamp:     1653461634
+   > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
+   > balance:             0.346165128295488155
+   > gas used:            226537 (0x374e9)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00226537 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03714828 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'SquareVerifier'
+   --------------------------
+   > transaction hash:    0x47d244e5f4a00fbbc9bb70fa735813652c20d0705d4f647ffb2abfbcc2319e43
+undefined
+   > Blocks: 1            Seconds: 5
+   > contract address:    0x4CA03921e2f14D67aD45eA09FB15fEa66dd3D29D
+   > block number:        10736330
+   > block timestamp:     1653461664
+   > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
+   > balance:             0.335002048295488155
+   > gas used:            1070545 (0x1055d1)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01070545 ETH
+
+
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > transaction hash:    0x025466405f97ac09062c74b10f9d6f80d7476e811737cd706ea1f37915530a64
+undefined
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01070545 ETH
+
+Summary
+=======
+> Total deployments:   5
+> Final cost:          0.06082455 ETH
 ```
 
 ## ZoKrates
