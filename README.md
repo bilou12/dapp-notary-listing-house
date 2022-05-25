@@ -68,89 +68,99 @@ migrate
 ```
 
 ```bash
-> Starting migrations...
+Starting migrations...
 ======================
 > Network name:    'rinkeby'
 > Network id:      4
-> Block gas limit: 30000000 (0x1c9c380)
+> Block gas limit: 29970705 (0x1c95111)
 
 
 1_initial_migration.js
 ======================
 
-   Deploying 'Migrations'
+   Replacing 'Migrations'
    ----------------------
-   > transaction hash:    0xa8a7602f8d3eb310b7b67ab0a301602d39fb81f8812a3537894d047e08813cd8
+   > transaction hash:    0x889b6a8ad717c7a8eede94b24353d86e6b189f54d6e57df7b750d0a720bca8f5
 undefined
 undefined
-
-   Deploying 'SolnSquareVerifier'
-   ------------------------------
-   > transaction hash:    0xa2c74127db5350d693d52ebe5b65dab715725e6fd10698a95922864063408202
-   > Blocks: 0            Seconds: 0
-   > contract address:    0x1ff1A6bF50F3440383a61774d25b5C92e567192F
-   > block number:        10736325
-   > block timestamp:     1653461635
+undefined
+undefined
+   > Blocks: 1            Seconds: 20
+   > contract address:    0x77d72634E505382660eeC7CE7323D603829ba9F7
+   > block number:        10736662
+   > block timestamp:     1653466688
    > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
-   > balance:             0.299832508295488155
-   > gas used:            3488291 (0x353a23)
-   > gas price:           10 gwei
-   > value sent:          0 ETH
-   > total cost:          0.03488291 ETH
-
-undefined
-   > Blocks: 1            Seconds: 13
-   > contract address:    0xDAc4b83BF34D08B628D4aE6AB96e4Ee3F5AfB1EB
-   > block number:        10736328
-   > block timestamp:     1653461634
-   > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
-   > balance:             0.346165128295488155
+   > balance:             0.296381172277698665
    > gas used:            226537 (0x374e9)
    > gas price:           10 gwei
    > value sent:          0 ETH
    > total cost:          0.00226537 ETH
 
 
+
+   Deploying 'SolnSquareVerifier'
+   ------------------------------
+   > transaction hash:    0x80d2249c0790acbaac11f09fbe06cdf2312616495584a56402fbb5c163a3d437
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B
+   > block number:        10736658
+   > block timestamp:     1653466700
+   > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
+   > balance:             0.252437382277698665
+   > gas used:            3262081 (0x31c681)
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03262081 ETH
+
    > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.03714828 ETH
+   > Total cost:          0.03488618 ETH
 
 
 2_deploy_contracts.js
 =====================
 
-   Deploying 'SquareVerifier'
+   Replacing 'SquareVerifier'
    --------------------------
-   > transaction hash:    0x47d244e5f4a00fbbc9bb70fa735813652c20d0705d4f647ffb2abfbcc2319e43
+   > transaction hash:    0xb244b4885b91c9f7c905489a0407657bc873da3a3ac31ec58222334aae9b52d2
 undefined
-   > Blocks: 1            Seconds: 5
-   > contract address:    0x4CA03921e2f14D67aD45eA09FB15fEa66dd3D29D
-   > block number:        10736330
-   > block timestamp:     1653461664
+undefined
+   > Blocks: 1            Seconds: 9
+   > contract address:    0xE4A031F2A2D967067032904AB18fEb78F2DF0378
+   > block number:        10736664
+   > block timestamp:     1653466718
    > account:             0xc6696eDf5e753f5B3009608F9e25ED2cb713C7fA
-   > balance:             0.335002048295488155
-   > gas used:            1070545 (0x1055d1)
+   > balance:             0.285344822277698665
+   > gas used:            1057872 (0x102450)
    > gas price:           10 gwei
    > value sent:          0 ETH
-   > total cost:          0.01070545 ETH
+   > total cost:          0.01057872 ETH
 
 
 
    Deploying 'SolnSquareVerifier'
    ------------------------------
-   > transaction hash:    0x025466405f97ac09062c74b10f9d6f80d7476e811737cd706ea1f37915530a64
+   > transaction hash:    0x2ebd8adce7b8a17c3f7e5d2affc5f9e4e63996a7a9d64e1fda9a3001c98f9609
 undefined
    > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.01070545 ETH
+   > Total cost:          0.01057872 ETH
 
 Summary
 =======
 > Total deployments:   5
-> Final cost:          0.06082455 ETH
+> Final cost:          0.05830899 ETH
 ```
+
+- Contract deployed on Rinkeby test network with the address:
+  v1: 0x1ff1A6bF50F3440383a61774d25b5C92e567192F (https://rinkeby.etherscan.io/address/0x1ff1a6bf50f3440383a61774d25b5c92e567192f)
+  v2: 0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B (https://rinkeby.etherscan.io/address/0x6e8cc50acbb75abf892b4c2eac4f8659da94ca8b)
+
+- 10 non-fungible tokens (0x6E8Cc50ACBb75ABf892B4C2eac4F8659Da94cA8B) are minted. From tx 0x6fce05512b4a058cafab4d2ed1056a9a72950c2c6d759bbb1cea386968c1c01f to tx 0x79b4183d82c6dac469bb6dd6d29f788b57df8c1edae69693e288695d68f3e3d9
+
+- tokens are visible on OpenSea (NFTs marketplace)
 
 ## ZoKrates
 
@@ -180,6 +190,7 @@ zokrates export-verifier
 
 ```bash
 # Creates a witness for use in generating the proof. A proof is dependant on specific values of public and private arguments
+# You need to change the parameters (-a 3 9) every time you need to create a new proof.
 zokrates compute-witness -a 3 9
 
 # Creates a proof tat is dependant on a witness and a proving_key

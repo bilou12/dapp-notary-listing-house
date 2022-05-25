@@ -2,7 +2,6 @@ node_modules/
 eth-contracts/build/
 perso.md
 zokrates/.zokrates/
-zokrates/code/square/witness2
-zokrates/code/square/proof2.json
 eth-contracts/.infura-key
 eth-contracts/.secret
+zokrates/code/square/old/

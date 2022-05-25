@@ -1,5 +1,4 @@
 pragma solidity ^0.5.0;
-pragma experimental ABIEncoderV2;
 
 import "./ERC721Mintable.sol";
 import "./ZokratesSquareVerifier.sol";
